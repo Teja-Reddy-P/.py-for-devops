@@ -1,0 +1,14 @@
+import os #Imported the os module to talk to to opertaing system.
+folders = input("Please provide list of folders:").split()
+
+for folder in folders:
+    try:                     # try is a keyword, we can use it in exceptional handling to give a try out for the code block.
+        files = os.listdir(folder) # os.listdir is same as ls in shell script. In python we have a function called listdir which will peint the elements.
+    except FileNotFoundError:    # Except is also a keyword for exceptional handling.
+
+        print("Please provide correct folder name:" + folder)
+        continue
+    print("Listing files for the folder-" + folder)
+
+for file in files:
+    print(file)
